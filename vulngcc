@@ -1,0 +1,12 @@
+#!/usr/bin/python2
+
+from os import system
+from sys import argv
+
+if len(argv) != 3:
+	print "Error: Missing One or More Variables!"
+	print "Usage: vulngcc <source code> <output file>"
+	exit(1)
+else:
+	system("gcc -fno-stack-protector -m32 -no-pie %s -o %s" % (argv[1], argv[2]))
+	exit(0)
